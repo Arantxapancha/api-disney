@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Configuración del encabezado de la página -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a la hoja de estilo de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Enlace a la hoja de estilo personalizada -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Título de la página -->
+    <title>Disney Characters</title>
+</head>
+
+<h1>API DISNEY</h1>
+
+<!-- Cuerpo de la página -->
+<body class="bg-skin">
+    <!-- Sección de búsqueda -->
+    <div class="bg-brown">
+        <div class="container">
+            <!-- Formulario de búsqueda con entrada de texto, selector y botón de búsqueda -->
+            <form id="busqueda" action="" class="row justify-content-evenly align-items-center pt-3">
+                <input type="text" id="consulta" class="col-4">
+                <select id="tipoBusqueda" class="col-2">
+                    <option value="nombre">Nombre</option>
+                    <option value="pelicula">Película</option>
+                    <option value="videojuego">Videojuego</option>
+                </select>
+                <button type="submit" class="btn btn-primary col-2">Buscar</button>
+            </form>
+            
+            <!-- Contenedor para botones adicionales (izquierda y derecha) -->
+            <div id="buttons" class="row justify-content-center align-items-center py-2 mb-2">
+                <div id="left" class="col-4 justify-content-center row"></div>
+                <div id="right" class="col-4 justify-content-center row"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección de resultados -->
+    <div class="bg-skin">
+        <div class="container">
+            <!-- Contenedor de resultados -->
+            <div class="resultados row" id="resultados"></div>
+        </div>
+    </div>
+
+    <!-- Plantilla para la tarjeta de personajes -->
+    <template id="template-card">
+        <div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12 rounded-0 border-brown">
+            <div class="card-body">
+                <!-- Imagen del personaje -->
+                <img class="img-fluid w-100" src="" alt="">
+                <!-- Nombre del personaje -->
+                <h5 class="card-title"></h5>
+                <!-- Información sobre películas, series de TV y videojuegos del personaje -->
+                <p class="films"></p>
+                <p class="tvShows"></p>
+                <p class="videoGames"></p>
+            </div>
+        </div>
+    </template>
+    
+    <!-- Plantilla para la tarjeta de episodios -->
+    <template id="template-episode">
+        <div class="card col-12 rounded-0 border-brown">
+            <div class="card-body">
+                <!-- Título del episodio -->
+                <h5 class="card-title"></h5>
+                <!-- Información del episodio -->
+                <p class="episode-info"></p>
+            </div>
+        </div>
+    </template>
+
+    <!-- Script que enlaza el archivo JavaScript para la funcionalidad de la página -->
+    <script src="app.js"></script>
+    <!-- Script que enlaza la biblioteca Popper para Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <!-- Script que enlaza la biblioteca Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+
+</html>
